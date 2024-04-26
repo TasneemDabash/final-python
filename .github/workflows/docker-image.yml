@@ -11,7 +11,7 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout the code
+    - name: Checkout the app code
       uses: actions/checkout@v3
     - name: Build the app docker image
       run: |
