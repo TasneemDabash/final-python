@@ -46,9 +46,9 @@ jobs:
         artifacts: "package-${{github.ref_name}}.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
-        
-    - name: Build the docker image
-      run: docker build . --file Dockerfile --tag tasneemdabash/webapp:${{ github.run_number }}-${{ github.sha }}
-
-    - name: push Docker Image to registory
-      run: docker push tasneemdabash/webapp:${{ github.run_number }}-${{ github.sha }}
+  #    run: python -m build
+  #  - name: Publish package
+  #    uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+ #     with:
+ #       user: __token__
+ #       password: ${{ secrets.PYPI_API_TOKEN }}
