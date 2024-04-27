@@ -48,7 +48,7 @@ jobs:
         allowUpdates: true
         
     - name: Build the docker image
-      run: docker build . --file Dockerfile --tag tasneemdabash/webapp:${{ github.run_number }}-${{ git.sha }}
+      run: docker build . --file Dockerfile --tag tasneemdabash/webapp:${{ github.run_number }}-${{ github.sha }}
 
     - name: push Docker Image to registory
-      run: docker push tasneemdabash/webapp:${{ github.run_number }}-${{ git.sha }}
+      run: docker push tasneemdabash/webapp:${{ github.run_number }}-${{ github.sha }}
