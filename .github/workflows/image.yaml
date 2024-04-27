@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v3
       
     - name: Build the Docker image
-      run: docker build . --file docker-file --tag tasneemdabash/final-python:${{ github.run_number }}-${{ github.sha }}
+      run: docker build . --file Dockerfile --tag tasneemdabash/final-python:${{ github.run_number }}-${{ github.sha }}
 
     - name: Login to Docker hub
       run: docker login -u ${{ secrets.DOCKER_HUB_PASS }} -p ${{ secrets.DOCKER_HUB_USER }}
