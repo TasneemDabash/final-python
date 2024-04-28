@@ -1,0 +1,24 @@
+name: docker image 
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:  
+
+jobs:
+  workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v3
+      
+    - name: build the docker image
+      run: docker build . --file docker-file --tag tasneemdabash/final-python:${{ GITHUB.RUN_NUMBER }}-${{ GITHUB.SHA }}
+
+    - name: Login to Docker hub
+      run: docker login -u ${{ secrets.DOCKER_HUB_USER }} -p ${{ secrets.DOCKER_HUB_PASS }}
+      
+    - name: Push Docker Image to Registry
+      run: docker push yazanda/final-python:${{ github.run_number }}-${{ github.sha }}
+     
