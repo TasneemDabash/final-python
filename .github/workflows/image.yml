@@ -18,9 +18,6 @@ jobs:
 
     - name: build the docker image
       run: docker build . --file Dockerfile --tag final-python:${{ github.run_number }}-${{ github.sha }}
-
-    - name: Login to Docker hub
-      run: docker login -u ${{ secrets.DOCKER_HUB_USER }} -p ${{ secrets.DOCKER_HUB_PASS }}
       
     - name: Push Docker Image to Registry
       run: docker push tasneemdabash/final-python:${{ github.run_number }}-${{ github.sha }}
