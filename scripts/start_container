@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --name final-python -d -p 5000:5000 tasneemdabash/final-python:latest
+docker run -itd --name final-python -p 5000:5000 TasneemDabash/final-python:latest
