@@ -1,3 +1,13 @@
 #!/bin/bash
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+
+# Check if the distribution is Amazon Linux
+if [[ $(cat /etc/os-release | grep '^ID=' | cut -d'=' -f2) == 'amzn' ]]; then
+    echo "Amazon Linux detected. Installing Docker..."
+    # Add Docker installation steps for Amazon Linux
+    yum install -y docker
+    systemctl enable docker
+    systemctl start docker
+else
+    echo "Unsupported distribution. Docker installation aborted."
+    exit 1
+fi
