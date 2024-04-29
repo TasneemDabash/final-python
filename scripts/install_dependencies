@@ -3,10 +3,14 @@
 # Check if the distribution is Amazon Linux
 if [[ $(cat /etc/os-release | grep '^ID=' | cut -d'=' -f2) == 'amzn' ]]; then
     echo "Amazon Linux detected. Installing Docker..."
-    # Add Docker installation steps for Amazon Linux
-    yum install -y docker
-    systemctl enable docker
-    systemctl start docker
+
+    # Install Docker using sudo and yum
+    sudo yum install -y docker
+
+    # Start and enable Docker service
+    sudo systemctl enable docker
+    sudo systemctl start docker
+
 else
     echo "Unsupported distribution. Docker installation aborted."
     exit 1
