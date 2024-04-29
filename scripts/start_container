@@ -1,2 +1,6 @@
-#!/bin/bash
-docker run -itd --name final-python -p 5000:5000 docker.io/TasneemDabash/final-python:latest
+# Build the Docker image
+cd TasneemDabash/dockerfile
+sudo docker build . -t TasneemDabash/final-python
+
+# Run the Docker container
+sudo docker run -itd --name final-python -p 5000:5000 TasneemDabash/final-python:latest
