@@ -9,12 +9,12 @@ hooks:
       timeout: 300
       runas: root
 
-    - location: /TasneemDabash/final-python/scripts/start_container
+    - location: /TasneemDabash/final-python/scripts/start_container.sh
       timeout: 300
       runas: root
       # Add a cleanup step to remove the install_dependencies script
     # - command: sudo rm -f scripts/install_dependencies
   ApplicationStop:
-    - location: /TasneemDabash/final-python/scripts/stop_container
+    - location: /TasneemDabash/final-python/scripts/stop_container.sh
       timeout: 300
       runas: root
