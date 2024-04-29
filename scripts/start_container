@@ -1,6 +1,5 @@
 # Build the Docker image
-cd TasneemDabash/dockerfile
-sudo docker build . -t TasneemDabash/final-python
+docker pull TasneemDabash/final-python:latest
 
 # Run the Docker container
 sudo docker run -itd --name final-python -p 5000:5000 TasneemDabash/final-python:latest
