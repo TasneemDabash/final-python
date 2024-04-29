@@ -3,11 +3,14 @@ os: linux
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
-      timeout: 3000
+      timeout: 300
+      runas: root
+    - location: scripts/start_container
+      timeout: 300
       runas: root
       # Add a cleanup step to remove the install_dependencies script
-    - command: sudo rm -f scripts/install_dependencies
+    # - command: sudo rm -f scripts/install_dependencies
   ApplicationStop:
     - location: scripts/stop_container
-      timeout: 3000
+      timeout: 300
       runas: root
