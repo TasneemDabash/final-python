@@ -1,20 +1,14 @@
 version: 0.0
 os: linux
-files:
-  - source: scripts/
-    destination: /TasneemDabash/final-python/scripts
 hooks:
   BeforeInstall:
-    - location: /TasneemDabash/final-python/scripts/install_dependencies
-      timeout: 300
+    - location: scripts/install_dependencies
+      timeout: 3000
       runas: root
-
-    - location: /TasneemDabash/final-python/scripts/start_container
-      timeout: 300
+    - location: scripts/start_container
+      timeout: 3000
       runas: root
-      # Add a cleanup step to remove the install_dependencies script
-    # - command: sudo rm -f scripts/install_dependencies
   ApplicationStop:
-    - location: /TasneemDabash/final-python/scripts/stop_container
-      timeout: 300
+    - location: scripts/stop_container
+      timeout: 3000
       runas: root
