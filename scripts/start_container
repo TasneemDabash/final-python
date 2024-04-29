@@ -1,5 +1,5 @@
 # Build the Docker image
-#sudo docker pull tasneemdabash/final-python
+sudo docker pull tasneemdabash/final-python:59-80b764417aa606ac8d4362f9689d4e7a48673b9e
 
 # Run the Docker container
-sudo docker run --name final-python -d -p 5000:5000 nginx
+sudo docker run --name final-python -d -p 5000:5000 tasneemdabash/final-python:59-80b764417aa606ac8d4362f9689d4e7a48673b9e
