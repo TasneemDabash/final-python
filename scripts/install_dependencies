@@ -19,10 +19,3 @@ echo \
 # Install Docker CE, Docker CLI, Containerd, and other tools
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose
-
-# Build the Docker image
-cd TasneemDabash/dockerfile
-sudo docker build . -t TasneemDabash/final-python
-
-# Run the Docker container
-sudo docker run -itd --name final-python -p 5000:5000 TasneemDabash/final-python:latest
